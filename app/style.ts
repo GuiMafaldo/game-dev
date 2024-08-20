@@ -3,7 +3,7 @@ import  styled  from "styled-components";
 export const BackgroundGame = styled.div`
   max-width: 960px;
   width: 100%;
-  background-color: #000;
+  background-color: #495057;
   margin: 0 auto;
   margin-top: 80px;
   padding: 200px;
@@ -13,6 +13,8 @@ export const BackgroundGame = styled.div`
   @media (min-width: 360px) and (max-width: 767px) {
     width: 90vw;
     height: 100vh;
+    margin-top: 8px;
+    margin-bottom: 30px;
     border-radius: 10px;
   }
 `
@@ -27,8 +29,9 @@ export const ContentContainer = styled.section`
 
   @media (min-width: 360px) and (max-width: 767px) {
     width: 80vw;
-    height: 90vh;
+    height: 100vh;
     padding-top: 60px;
+
     margin: 0 auto;
     margin-left: -175px;
     margin-top: -140px;
@@ -36,6 +39,15 @@ export const ContentContainer = styled.section`
 
   & .title-and-sub {
       margin-top: -80px;
+
+      & .title-and-image {
+        display: flex;
+        align-items: center;
+
+        & .image {
+          margin-top: -60px;
+        }
+      }
       
       h1{
         text-align: center;
@@ -53,14 +65,22 @@ export const ContentContainer = styled.section`
       }
 
       @media (min-width: 360px) and (max-width: 767px) {
-        margin-left: 0;
-        margin-bottom: 0;
+        margin-left: 10px;
 
-       > h1 {
+       & .title-and-image {
+        > h1 {
            text-align: center;
             font-size: 1.8em;
             margin-bottom: 30px;
         }
+
+         & .image {
+            width: 60px;
+            height: 60px;
+            margin-top: -30px;
+            margin-left: 20px;
+         }
+       }
         > h3 {
           font-size: 1.1em;
         }
@@ -81,19 +101,34 @@ export const ContentContainer = styled.section`
          }
 
           & .input-questions {
+            align-items: center;
             color: #fff;
             text-align: center;
 
             > h4 {
-              margin-bottom: 45px; 
+              margin-bottom: 30px; 
             }
 
-            input {
-              height: 20px;
-              margin-left: 30px;
-              margin-right: 20px;
-              cursor: pointer;
-            }
+            & .questions {
+                & .span-color {
+                  
+                  & #option-select {
+                      border-radius: 20px;
+                      width: 40px;
+                      height: 40px;
+                      margin: 12px 4px 0 24px;
+                      font-weight: 700;
+                      font-family: Helvetica;
+                      text-transform: uppercase;
+
+                      @media(min-width: 360px) and (max-width: 767px){
+                          margin-top: -10px;
+                          margin-left: -10px;
+                      }
+                    }
+                  }
+                }
+              }
 
             button {
               width: 100px;
@@ -127,30 +162,33 @@ export const ContentContainer = styled.section`
                     padding: 6px; 
                 }
 
-                @media (min-width: 360px) and (max-width: 767px){
-                  margin-top: -65px;
-                }
+                // @media (min-width: 360px) and (max-width: 767px){
+                //     margin-top: -20px;
+                // }
                 
             }
 
 
             @media (min-width: 360px) and (max-width: 767px) {
-                 display: block;
+                 display: flex;
+                  margin-top: -40px;
 
                  & .help-buttons{
                     display: flex;
                     align-items: center;
                     justify-content: space-between;
-                    margin-bottom: 30px;
 
                     > button {
+                      margin-top:-90px;
                       padding: 6px; 
                     }
                  }
 
-                 btn-submmit{ 
+                 & .btn-submmit{ 
                   height: 40px;
-                  margin-top: 30px;
+                  margin-top: -40px;
+                  margin-bottom: 130px
+                  
                     
                  }
               }
@@ -165,6 +203,7 @@ export const ContentContainer = styled.section`
 
           @media (min-width: 360px) and (max-width: 767px) {
                  display: block;
+                
               }
 
           & .span-color {
@@ -184,7 +223,7 @@ export const ContentContainer = styled.section`
                   color: #000;
                   font-weight: 700;
                 }
-                }
+              }
                 
                 @media (min-width: 360px) and (max-width: 767px) {
                   display: flex;

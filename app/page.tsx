@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { questions } from "../app/QuisQuestions/index";
 import { BackgroundGame, ContentContainer } from './style';
+import Image from "next/image"
 
 // Função auxiliar para verificar se a resposta está correta
 const checkAnswer = (questionId: number, selectedOption: string): boolean => {
@@ -92,7 +93,14 @@ export default function Home() {
     <BackgroundGame>
       <ContentContainer>
         <div className='title-and-sub'>
-          <h1>Game-Dev do Milhão</h1>
+          <div className='title-and-image'>
+            <h1>Game-Dev do Milhão</h1>
+              <Image className='image'
+                src="/image/mi.png"
+                width={100}
+                height={100}
+                alt="mi" />
+          </div>
           <h3>Aqui você tem a chance de testar seus conhecimentos na área de desenvolvimento!</h3>
         </div>
         
@@ -105,12 +113,13 @@ export default function Home() {
             <div className='questions'>
               {options.map(option => (
                 <div className='span-color' key={option.value}>
-                  <input 
-                    type="checkbox" 
-                    checked={selectedOption === option.value}
-                    onChange={() => controlCheckBox(option.value)}
-                    value={option.label}
-                  />
+                  <div className='span-color' key={option.value} onClick={() => controlCheckBox(option.value)}>
+                    <button className={selectedOption === option.value? 'checked': ''}
+                      id="option-select"
+                    >
+                      {option.value}
+                    </button>
+                  </div>
                   <span id={option.value}>{option.label}</span>
                 </div>
               ))}

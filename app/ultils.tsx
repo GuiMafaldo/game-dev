@@ -9,12 +9,13 @@ export const useUtilities = () => {
     const handleCheckBox = (value: string) => {
       setChecked(value);
     };
+  const options = [
+    {value: 'a', label: 'option 1'},
+    {value: 'b', label: 'option 2'},
+    {value: 'c', label: 'option 3'},
+    {value: 'd', label: 'option 4'}
+  ]
   
-    const option1 = "a";
-    const option2 = "b";
-    const option3 = "c";
-    const option4 = "d";
-  
-    return { res, checked, handleCheckBox, option1, option2, option3, option4 };
+    return { res, checked, handleCheckBox, options};
   };
   
