@@ -3,12 +3,14 @@ import  styled  from "styled-components";
 export const BackgroundGame = styled.div`
   max-width: 960px;
   width: 100%;
+  background-image: url(/image/template.png);
   background-color: #495057;
   margin: 0 auto;
   margin-top: 80px;
   padding: 200px;
-  padding-bottom: 220px;
+  padding-bottom: 200px;
   border-radius: 15%;
+
 
   @media (min-width: 360px) and (max-width: 767px) {
     width: 90vw;
@@ -213,7 +215,8 @@ export const ContentContainer = styled.section`
             margin-bottom: 10px;
               
             span {
-                background-color: rgba(173, 216, 230, 0.25);
+                background-color: #000;
+                opacity: 0.7;
                 padding: 16px;
                 border-radius: 14px;
                 cursor: pointer;
